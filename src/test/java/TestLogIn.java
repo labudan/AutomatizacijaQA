@@ -9,7 +9,7 @@ import pages.HomePage;
 import pages.LogInPage;
 
 public class TestLogIn {
-  @Test
+    @Test
 
     public void testLogInFuncionality() {
         String email = "todorovicmilos2020@gmail.com";
@@ -20,7 +20,7 @@ public class TestLogIn {
         WebDriver driver = new ChromeDriver();
         driver.get("http://automationpractice.com/index.php");
 
-        try{
+        try {
             HomePage homePage = new HomePage(driver);
 
             LogInPage logInPage = homePage.clickSignInLink();
@@ -30,19 +30,17 @@ public class TestLogIn {
                     .typePassword(password);
             Thread.sleep(3000);
 
-driver.findElement(By.id("SubmitLogin")).click();
-Thread.sleep(5000);
-           driver.findElement(By.xpath("//a[@class='account']")).click();
-Thread.sleep(5000);
+            driver.findElement(By.id("SubmitLogin")).click();
+            Thread.sleep(5000);
+            driver.findElement(By.xpath("//a[@class='account']")).click();
+            Thread.sleep(5000);
 
-            String actualUrl="http://automationpractice.com/index.php?controller=my-account";
-            String expectedUrl= driver.getCurrentUrl();
+            String actualUrl = "http://automationpractice.com/index.php?controller=my-account";
+            String expectedUrl = driver.getCurrentUrl();
             Assert.assertEquals(actualUrl, expectedUrl);
-            if(actualUrl.equalsIgnoreCase(expectedUrl))
-            {
+            if (actualUrl.equalsIgnoreCase(expectedUrl)) {
                 System.out.println("Test Passed");
-            }
-            else {
+            } else {
                 System.out.println("Test Failed");
 
             }
