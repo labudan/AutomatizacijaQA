@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LogInPage;
+import webDriver.WebDriverFactory;
 
 public class TestLogIn {
     @Test
@@ -15,9 +16,10 @@ public class TestLogIn {
         String email = "todorovicmilos2020@gmail.com";
         String password = "123456789";
 
-        System.setProperty("webdriver.chrome.driver", "./src/main/resources/driver/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "./src/main/resources/driver/chromedriver.exe");
+        // WebDriver driver = new ChromeDriver();
+      WebDriver driver = WebDriverFactory.getDriver();
 
-        WebDriver driver = new ChromeDriver();
         driver.get("http://automationpractice.com/index.php");
 
         try {

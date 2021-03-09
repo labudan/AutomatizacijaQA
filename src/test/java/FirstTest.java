@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import webDriver.WebDriverFactory;
 
 public class FirstTest {
 
@@ -10,9 +11,10 @@ public class FirstTest {
     public void test() {
 
         String expectedHeader = "Automation Practice Website";
-        System.setProperty("webdriver.chrome.driver", "./src/main/resources/driver/chromedriver.exe");
+       // System.setProperty("webdriver.chrome.driver", "./src/main/resources/driver/chromedriver.exe");
 
-        WebDriver driver = new ChromeDriver();
+       // WebDriver driver = new ChromeDriver();
+        WebDriver driver = WebDriverFactory.getDriver();
 
         driver.get("http://automationpractice.com/index.php");
 
